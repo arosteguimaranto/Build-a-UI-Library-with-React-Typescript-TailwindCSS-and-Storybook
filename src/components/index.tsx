@@ -1,9 +1,2 @@
+export * from "./Button";
 
-export default function index() {
-    return (
-        <>
-
-        </>
-
-    )
-}
