@@ -23,37 +23,34 @@ const textStyles = cva("w-full", {
             medium: "font-medium",
             semibold: "font-semibold",
             bold: "font-bold",
-            extrabold: "font-extrabold",
             black: "font-black",
         },
         align: {
             left: "text-left",
             center: "text-center",
             right: "text-right",
-
         },
-
         italic: {
             true: "italic",
         },
         underline: {
-            true: "underline underline-offset-2"
+            true: "underline underline-offset-2",
         },
-
     },
-
     defaultVariants: {
         size: "base",
         align: "left",
-    }
-})
+    },
+});
 
-type TextProps<C extends React.ElementType> = PolymorphicComponentPropsWithRef<C, VariantProps<typeof textStyles>>;
+type TextProps<C extends React.ElementType> = PolymorphicComponentPropsWithRef<
+    C,
+    VariantProps<typeof textStyles>
+>;
 
-type TextComponent = <C extends React.ElementType = 'span'>(
+type TextComponent = <C extends React.ElementType = "span">(
     props: TextProps<C>
 ) => React.ReactElement | null;
-
 
 // @ts-expect-error - unexpected typing errors
 export const Text: TextComponent = forwardRef(
